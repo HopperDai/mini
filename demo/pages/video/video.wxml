@@ -1,0 +1,7 @@
+<!-- 一个页面只能有一个 camera -->
+<camera style='width:100%;height:500rpx'></camera>
+<button bindtap='take'>take</button>
+
+<view>
+  <image src='{{photoUrl}}'></image>
+</view>

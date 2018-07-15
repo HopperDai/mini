@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/texun/parents/parent",
+    "pages/jingpin/jingpin"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "仿优仔",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  }
+}

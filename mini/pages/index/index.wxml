@@ -1,0 +1,106 @@
+<view class='index-container' wx:if='{{now==0}}'>
+  <view class='texun'>
+    <view class='title'>特训营</view>
+    <view class='list'>
+      <swiper previous-margin="30rpx" next-margin="30rpx">
+        <swiper-item wx:for='{{texunData}}' wx:key='{{index}}' data-name='{{item.name}}' bindtap='toParentTx'>
+          <view class='item'>
+            <view class='poster'>
+              <image src='{{item.imgUrl}}'></image>
+            </view>
+            <view class='su-info' wx:if="{{item.su!=item.rediual}}">
+              <view class='content'>{{item.su}}人已报名，还剩
+                <text class='rediual'> {{item.rediual}} </text>名额
+              </view>
+              <view class='sign'>
+                <button size='mini' plain='{{true}}'>立即报名</button>
+              </view>
+            </view>
+            <view class='su-info' wx:if="{{item.su==item.rediual}}">
+              <view class='content'>
+                已报满，竟请期待下期
+              </view>
+              <view class='sign' style='opacity:.5'>
+                <button size='mini' plain='{{true}}'>立即报名</button>
+              </view>
+            </view>
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+  <view class='jingpin'>
+    <view class='title'>精品课</view>
+    <view class='sub-title'>大家都在学</view>
+    <navigator url="/pages/jingpin/jingpin">
+      <view class='list'>
+        <view class='item'>
+          <view class='poster'>
+            <image src='/resource/imgs/2.png'></image>
+          </view>
+          <view class='learn-info'>
+            <view class='content'>
+              <text class='rediual'> 7312 </text>人在学
+            </view>
+            <view class='sign'>
+              <button size='mini' plain='{{true}}'>免费试听</button>
+            </view>
+          </view>
+        </view>
+        <view class='item'>
+          <view class='poster'>
+            <image src='/resource/imgs/2.png'></image>
+          </view>
+          <view class='learn-info'>
+            <view class='content'>
+              <text class='rediual'> 7312 </text>人在学
+            </view>
+            <view class='sign'>
+              <button size='mini' plain='{{true}}'>免费试听</button>
+            </view>
+          </view>
+        </view>
+        <view class='item'>
+          <view class='poster'>
+            <image src='/resource/imgs/2.png'></image>
+          </view>
+          <view class='learn-info'>
+            <view class='content'>
+              <text class='rediual'> 7312 </text>人在学
+            </view>
+            <view class='sign'>
+              <button size='mini' plain='{{true}}'>免费试听</button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>
+
+<view class='mine-container' wx:if='{{now==1}}'>
+  <view class='user-info'>
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <view class="userinfo-nickname">{{userInfo.nickName}}</view>
+    </block>
+  </view>
+  <view class='operate'>
+    <view class='item'>已购内容
+      <image src='/resource/icons/arrow-right.svg'></image>
+    </view>
+    <view class='item'>优惠券
+      <image src='/resource/icons/arrow-right.svg'></image>
+    </view>
+    <view class='item' style='border:none'>切换账号
+      <image src='/resource/icons/arrow-right.svg'></image>
+    </view>
+  </view>
+  <view class='box'></view>
+</view>
+
+
+<view class='footer'>
+  <view wx:for='{{nav}}' wx:key='{{index}}' class='{{now==index?"active":""}}' data-index='{{index}}' data-url='{{item.url}}' data-title='{{item.title}}' bindtap='navigate'>{{item.name}}</view>
+</view>

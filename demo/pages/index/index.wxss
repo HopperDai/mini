@@ -1,0 +1,90 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  width: 100%;
+  z-index: 999;
+}
+
+.header .container {
+  white-space: nowrap;
+  position: relative;
+}
+
+.header .container view view {
+  width: 120rpx;
+  text-align: center;
+  font-size: 30rpx;
+  display: inline-block;
+  padding-bottom: 10rpx;
+}
+
+.header .container view view.active {
+  font-weight: bold;
+}
+
+.header .cur {
+  width: 64rpx;
+  height: 6rpx;
+  background: #f8ca43;
+  position: absolute;
+  bottom: 0;
+  margin-left: 28rpx;
+  transition: 0.3s all ease;
+}
+
+/**/
+
+.video-list {
+  margin-top: 40rpx;
+  padding-bottom: 100rpx;
+}
+
+.video-item {
+  position: relative;
+}
+
+.video-item .cover {
+  width: 750rpx;
+  height: 422rpx;
+}
+
+.video-item .title {
+  font-size: 35rpx;
+  color: white;
+  position: absolute;
+  padding-right: 30rpx;
+  left: 30rpx;
+  top: 25rpx;
+}
+
+.video-item .detail {
+  height: 100rpx;
+}
+
+.video-item .detail button {
+  border: none;
+  background: none;
+  outline: none;
+  padding: 0;
+  font-size: 30rpx;
+  margin-right: 50rpx;
+}
+
+.video-item .detail image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+/**/
+
+.footer {
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+}

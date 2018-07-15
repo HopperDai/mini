@@ -1,0 +1,30 @@
+<view class='header'>
+  <scroll-view scroll-x='true' scroll-with-animation='{{true}}'>
+    <view class='container'>
+      <view>
+        <view class='{{now==index?"active":""}}' wx:for='{{tags}}' wx:key='{{index}}' bindtap='fnClick' data-index='{{index}}'>{{item}}</view>
+      </view>
+      <view class='cur' style='left:{{left}}px'></view>
+    </view>
+  </scroll-view>
+</view>
+<view class='video-list'>
+  <view class='video-item' wx:for='{{list}}' wx:key='{{index}}'>
+    <image class='cover' src='{{item.url}}'></image>
+    <text class='title'>{{item.title}}</text>
+    <view class='detail'>
+      <button size='mini' plain='{{true}}'>
+        <image src='/res/icons/like.svg'></image>
+        {{item.like}}</button>
+      <button size='mini' plain='{{true}}'>
+        <image src='/res/icons/comment.svg'></image>
+        {{item.comment}}</button>
+      <button size='mini' plain='{{true}}' open-type='share'>
+        <image src='/res/icons/share.svg'></image>
+      </button>
+    </view>
+  </view>
+</view>
+<view class='footer'>
+  <button bindtap='takeVideo'>拍视频</button>
+</view>
